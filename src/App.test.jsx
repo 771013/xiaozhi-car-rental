@@ -280,6 +280,15 @@ describe('小支租车官网交互', () => {
     expect(styles).toMatch(/@media\(min-width:901px\) and \(max-height:560px\)\{[\s\S]*?\.service-group,\.service-group-2\{height:238px/)
   })
 
+  it('最大尺寸首屏沿用常规桌面文字和按钮尺寸', () => {
+    const largeHeroRule = styles.match(/@media\(min-width:1600px\) and \(min-height:900px\)\{([\s\S]*?)\n\}/)?.[1] ?? ''
+
+    expect(largeHeroRule).not.toMatch(/\.hero h1\{[^}]*font-size:/)
+    expect(largeHeroRule).not.toMatch(/\.hero h2\{[^}]*font-size:/)
+    expect(largeHeroRule).not.toMatch(/\.hero-copy>p\{[^}]*font-size:/)
+    expect(largeHeroRule).not.toMatch(/\.hero \.button\{[^}]*font-size:/)
+  })
+
   it('桌面端比价与知心租内容组在可用一屏内垂直居中', () => {
     expect(styles).toMatch(/@media\(min-width:901px\)\{[\s\S]*?\.compare-inner\{[^}]*height:100%[^}]*display:flex[^}]*flex-direction:column[^}]*justify-content:center/)
     expect(styles).toMatch(/@media\(min-width:901px\)\{[\s\S]*?\.service-inner\{[^}]*display:flex[^}]*flex-direction:column[^}]*justify-content:center/)

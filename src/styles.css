@@ -273,12 +273,6 @@ section[id]{scroll-margin-top:70px}
 
 @media(min-width:1600px) and (min-height:900px){
   .hero-content{width:min(1200px,calc(100% - 48px))}
-  .hero h1{font-size:72px}
-  .hero h2{font-size:27px}
-  .hero-copy>p{max-width:700px;font-size:18px}
-  .eyebrow{font-size:15px}
-  .hero-actions{margin-top:46px}
-  .hero .button{width:180px;height:56px;font-size:20px}
   .hero-visual{left:48%;top:calc(50% - 260px);width:min(760px,48vw);height:auto}
 }
 
